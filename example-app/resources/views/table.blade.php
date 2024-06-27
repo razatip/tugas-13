@@ -1,4 +1,5 @@
 @extends('layout.main')
+
 @section('content')
 <table class="table table-bordered">
     <thead>
