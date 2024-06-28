@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeranTable extends Migration
+class CreatePemeranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePeranTable extends Migration
      */
     public function up()
     {
-        Schema::create('peran', function (Blueprint $table) {
+        Schema::create('pemeran', function (Blueprint $table) {
             $table->unsignedBigInteger('id');
             $table->unsignedBigInteger('id_cast');
             $table->unsignedBigInteger('id_film');
             $table->string('nama', 255);
-            $table->foreign('id_cast')->references('id')->on('cast');
+            $table->foreign('id_cast')->references('id')->on('data_casts');
             $table->foreign('id_film')->references('id')->on('film');
         });
     }
@@ -30,6 +30,6 @@ class CreatePeranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peran');
+        Schema::dropIfExists('pemeran');
     }
 }
